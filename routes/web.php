@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Página Inicial é a Página de Login
+    Route::get('/', 'Login\LoginController@index')->name('login');   
+    Route::post('/verificasenha', 'Login\LoginController@verificasenha')->name('login.check');    
+    Route::get('/criar', 'Login\LoginController@criar')->name('login.criar');    
