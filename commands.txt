@@ -7,6 +7,9 @@ php artisan storage:link
 php artisan make:migration peso_table
 php artisan migrate
 
+php artisan make:auth
+
+
 DB_CONNECTION=mysql
 DB_HOST=108.179.253.242	
 DB_PORT=3306    
