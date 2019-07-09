@@ -46,7 +46,7 @@
                             <a href="{{route('home')}}"><i class="fa fa-dashboard fa-fw"></i>Página Inicial</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-tag fa-fw"></i>Marcas<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-tag fa-fw"></i>Grupo Familiar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{route('home')}}">Exibir</a>
