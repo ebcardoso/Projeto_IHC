@@ -10,13 +10,13 @@ class AplicativoController extends Controller {
         $this->middleware('auth');
     }
     
-    function index() {
+    public function index() {
         $title = 'Dieta da Família';
         $titulo_secao = 'Dieta da Família';
         return view('app.index', compact('title', 'titulo_secao'));
     }
 
-    function perfil() {
+    public function perfil() {
         
     }
 }

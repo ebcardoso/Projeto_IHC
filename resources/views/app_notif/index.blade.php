@@ -22,22 +22,28 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Família {{ $nome_familia or '(null)'}}
+                        Notificações
                     </div> 
 
                     <div class="panel-body">
-                        <form method="post" action="{{route('grupo.convitesave')}}">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label>E-Mail:*</label>
-                                        <input type="text" name="email" class="form-control" placeholder="Insira o E-Mail">
-                                    </div>
-                                    <button type="submit" class="btn btn-success">Enviar Convite</button>
-                                </div> <!-- col-lg-7 -->
-                            </div>  
-                        </form>
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Autor</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($notifs as $m)
+                                    <tr class="odd gradeX"> 
+                                        <td> {{$m->descri}} </td>
+                                        <td> {{$m->autor}} </td>
+                                        <td> -  </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div> <!-- panel-body -->
                 </div> <!-- panel panel-default -->
             </div> <!-- col-lg-12 -->

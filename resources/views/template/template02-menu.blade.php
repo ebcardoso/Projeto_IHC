@@ -46,13 +46,10 @@
                             <a href="{{route('home')}}"><i class="fa fa-dashboard fa-fw"></i>Página Inicial</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-tag fa-fw"></i>Grupo Familiar<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{route('home')}}">Exibir</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a href="{{route('grupo.index')}}"><i class="fa fa-tag fa-fw"></i>Grupo Familiar</a>
+                        </li>
+                        <li>
+                            <a href="{{route('notificacao.index')}}"><i class="fa fa-tag fa-fw"></i>Notificações</a>
                         </li>
                     </ul>
                 </div>
