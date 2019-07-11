@@ -51,6 +51,9 @@
                         <li>
                             <a href="{{route('notificacao.index')}}"><i class="fa fa-tag fa-fw"></i>Notificações</a>
                         </li>
+                        <li>
+                            <a href="{{route('dieta.inicial')}}"><i class="fa fa-tag fa-fw"></i>Minha Dieta</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

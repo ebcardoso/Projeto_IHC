@@ -20,3 +20,8 @@ Route::get('/notificacoes', 'Aplicativo\NotController@index')->name('notificacao
 
 //responsavel
 Route::post('/responsavel/atribuir', 'Aplicativo\ResponsavelController@atribuir')->name('responsavel.atribuir');
+
+//dieta
+Route::get('/dieta', 'Aplicativo\DietaController@inicial')->name('dieta.inicial');
+Route::get('/dieta/inserircalorias', 'Aplicativo\DietaController@inserircalorias')->name('dieta.inserircalorias');
+Route::post('/dieta/setcalorias', 'Aplicativo\DietaController@setcalorias')->name('dieta.setcalorias');
