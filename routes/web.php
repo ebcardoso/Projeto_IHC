@@ -17,3 +17,6 @@ Route::resource('grupo', 'Aplicativo\GrupoController');
 
 //notificações
 Route::get('/notificacoes', 'Aplicativo\NotController@index')->name('notificacao.index');
+
+//responsavel
+Route::post('/responsavel/atribuir', 'Aplicativo\ResponsavelController@atribuir')->name('responsavel.atribuir');

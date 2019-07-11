@@ -31,6 +31,9 @@
                                 <tr>
                                     <th>Nome</th>
                                     <th>Idade</th>
+                                    @if ($status_membro == 1)
+                                    <th>Atribuir Responsável</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,6 +41,24 @@
                                     <tr class="odd gradeX"> 
                                         <td> {{$m->name}} </td>
                                         <td> {{$m->idade}} </td>
+                                        @if ($status_membro == 1)
+                                            <td>
+                                                <form method="post" action="{{route('responsavel.atribuir')}}">
+                                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                                    <input type="hidden" name="id_user" value="{{ $m->id }}">
+
+                                                    <select name="id_responsavel" class="form-control">
+                                                        @foreach($membros as $resp)
+                                                            <option value="{{$resp->id}}">
+                                                                {{$resp->name}}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                    
+                                                    <button type="submit" class="btn btn-success">Definir</button>
+                                                </form>
+                                            </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                             </tbody>

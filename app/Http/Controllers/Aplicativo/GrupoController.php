@@ -63,8 +63,18 @@ class GrupoController extends Controller {
                                                     ->get()
                                 )
                                 ->get();
-                                
-            return view('app_grupo.index', compact('title', 'titulo_secao', 'nome_familia', 'membros'));
+
+            $status_aux =  $this->grupovinculo
+                                    ->select('grupovinculo.status as status')
+                                    ->where('grupovinculo.id_user', Auth::user()->id)
+                                    ->get();
+            $status_membro = $status_aux[0]->status;
+                                    
+            return view('app_grupo.index', compact('title', 
+                                                   'titulo_secao',
+                                                   'nome_familia', 
+                                                   'membros', 
+                                                   'status_membro'));
         }
     }
 
