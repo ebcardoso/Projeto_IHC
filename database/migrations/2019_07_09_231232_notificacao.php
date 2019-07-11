@@ -5,7 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class Notificacao extends Migration {
-
     public function up() {
         Schema::create('notificacao', function (Blueprint $table) {
             $table->increments('id');
