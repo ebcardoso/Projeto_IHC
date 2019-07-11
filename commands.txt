@@ -8,6 +8,7 @@ php artisan make:migration peso_table
 php artisan migrate
 
 php artisan make:auth
+php artisan db:seed --class=UsersTableSeeder
 
 
 DB_CONNECTION=mysql

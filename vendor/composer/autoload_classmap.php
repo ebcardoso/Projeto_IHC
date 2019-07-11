@@ -6,11 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AlimentoAlmocoSeeder' => $baseDir . '/database/seeds/AlimentoAlmocoSeeder.php',
+    'AlimentoCafeSeeder' => $baseDir . '/database/seeds/AlimentoCafeSeeder.php',
+    'AlimentoJantaSeeder' => $baseDir . '/database/seeds/AlimentoJantaSeeder.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Aplicativo\\AplicativoController' => $baseDir . '/app/Http/Controllers/Aplicativo/AplicativoController.php',
     'App\\Http\\Controllers\\Aplicativo\\GrupoController' => $baseDir . '/app/Http/Controllers/Aplicativo/GrupoController.php',
     'App\\Http\\Controllers\\Aplicativo\\NotController' => $baseDir . '/app/Http/Controllers/Aplicativo/NotController.php',
+    'App\\Http\\Controllers\\Aplicativo\\ResponsavelController' => $baseDir . '/app/Http/Controllers/Aplicativo/ResponsavelController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -22,9 +26,11 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Model\\AlimentoModel' => $baseDir . '/app/Model/AlimentoModel.php',
     'App\\Model\\GrupoModel' => $baseDir . '/app/Model/GrupoModel.php',
     'App\\Model\\GrupoVinculoModel' => $baseDir . '/app/Model/GrupoVinculoModel.php',
     'App\\Model\\NotificacaoModel' => $baseDir . '/app/Model/NotificacaoModel.php',
+    'App\\Model\\ResponsavelModel' => $baseDir . '/app/Model/ResponsavelModel.php',
     'App\\Model\\UsersModel' => $baseDir . '/app/Model/UsersModel.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

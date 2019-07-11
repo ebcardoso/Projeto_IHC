@@ -351,11 +351,15 @@ class ComposerStaticInit2a05fc75df92bf434b3feaebf7ec3d36
     );
 
     public static $classMap = array (
+        'AlimentoAlmocoSeeder' => __DIR__ . '/../..' . '/database/seeds/AlimentoAlmocoSeeder.php',
+        'AlimentoCafeSeeder' => __DIR__ . '/../..' . '/database/seeds/AlimentoCafeSeeder.php',
+        'AlimentoJantaSeeder' => __DIR__ . '/../..' . '/database/seeds/AlimentoJantaSeeder.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Aplicativo\\AplicativoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Aplicativo/AplicativoController.php',
         'App\\Http\\Controllers\\Aplicativo\\GrupoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Aplicativo/GrupoController.php',
         'App\\Http\\Controllers\\Aplicativo\\NotController' => __DIR__ . '/../..' . '/app/Http/Controllers/Aplicativo/NotController.php',
+        'App\\Http\\Controllers\\Aplicativo\\ResponsavelController' => __DIR__ . '/../..' . '/app/Http/Controllers/Aplicativo/ResponsavelController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -367,9 +371,11 @@ class ComposerStaticInit2a05fc75df92bf434b3feaebf7ec3d36
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Model\\AlimentoModel' => __DIR__ . '/../..' . '/app/Model/AlimentoModel.php',
         'App\\Model\\GrupoModel' => __DIR__ . '/../..' . '/app/Model/GrupoModel.php',
         'App\\Model\\GrupoVinculoModel' => __DIR__ . '/../..' . '/app/Model/GrupoVinculoModel.php',
         'App\\Model\\NotificacaoModel' => __DIR__ . '/../..' . '/app/Model/NotificacaoModel.php',
+        'App\\Model\\ResponsavelModel' => __DIR__ . '/../..' . '/app/Model/ResponsavelModel.php',
         'App\\Model\\UsersModel' => __DIR__ . '/../..' . '/app/Model/UsersModel.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
