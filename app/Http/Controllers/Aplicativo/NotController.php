@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Model\NotificacaoModel;
 
 class NotController extends Controller {
+    private $notificacao;
     public function __construct(NotificacaoModel $notificacao) {
         $this->middleware('auth');
         $this->notificacao = $notificacao;

@@ -25,3 +25,9 @@ Route::post('/responsavel/atribuir', 'Aplicativo\ResponsavelController@atribuir'
 Route::get('/dieta', 'Aplicativo\DietaController@inicial')->name('dieta.inicial');
 Route::get('/dieta/inserircalorias', 'Aplicativo\DietaController@inserircalorias')->name('dieta.inserircalorias');
 Route::post('/dieta/setcalorias', 'Aplicativo\DietaController@setcalorias')->name('dieta.setcalorias');
+Route::get('/dieta/cafe',   'Aplicativo\DietaController@cafe')->name('dieta.cafe');
+Route::get('/dieta/almoco', 'Aplicativo\DietaController@almoco')->name('dieta.almoco');
+Route::get('/dieta/janta',  'Aplicativo\DietaController@janta')->name('dieta.janta');
+Route::get('/dieta/cafe_excluir/{id}',   'Aplicativo\DietaController@cafe_excluir')->name('dieta.cafe_excluir');
+Route::get('/dieta/almoco_excluir/{id}', 'Aplicativo\DietaController@almoco_excluir')->name('dieta.almoco_excluir');
+Route::get('/dieta/janta_excluir/{id}',  'Aplicativo\DietaController@janta_excluir')->name('dieta.janta_excluir');
