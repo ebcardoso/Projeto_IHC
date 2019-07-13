@@ -20,25 +20,25 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="{{route('home')}}"><i class="fa fa-dashboard fa-fw"></i>Página Inicial</a>
+                            <a href="{{route('home')}}"><i class="fa fa-dashboard fa-fw"></i>Inicio</a>
                         </li>
                         <li>
-                            <a href="{{route('grupo.index')}}"><i class="fa fa-tag fa-fw"></i>Grupo Familiar</a>
+                            <a href="{{route('grupo.index')}}"><i class="fa fa-group fa-fw"></i>Minha Família</a>
+                        </li>
+                        <li>
+                            <a href="{{route('dieta.inicial')}}"><i class="fa fa-apple fa-fw"></i>Minha Dieta</a>
+                        </li>
+                        <li>
+                            <a href="{{route('exercicios.inicial')}}"><i class="fa fa-gears fa-fw"></i>Meus Exercícios</a>
+                        </li>
+                        <li>
+                            <a href="{{route('meta.inicial')}}"><i class="fa fa-share fa-fw"></i>Metas</a>
                         </li>
                         <li>
                             <a href="{{route('notificacao.index')}}"><i class="fa fa-tag fa-fw"></i>Notificações</a>
                         </li>
                         <li>
-                            <a href="{{route('dieta.inicial')}}"><i class="fa fa-tag fa-fw"></i>Minha Dieta</a>
-                        </li>
-                        <li>
-                            <a href="{{route('meta.inicial')}}"><i class="fa fa-tag fa-fw"></i>Metas</a>
-                        </li>
-                        <li>
-                            <a href="{{route('exercicios.inicial')}}"><i class="fa fa-tag fa-fw"></i>Exercícios</a>
-                        </li>
-                        <li>
-                            <a href="{{route('logout')}}"><i class="fa fa-tag fa-fw"></i>Sair</a>
+                            <a href="{{route('logout')}}"><i class="fa fa-sign-out  fa-fw"></i>Sair</a>
                         </li>
                     </ul>
                 </div>
