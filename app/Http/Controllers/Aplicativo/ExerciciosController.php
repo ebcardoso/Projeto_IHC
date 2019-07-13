@@ -126,6 +126,9 @@ class ExerciciosController extends Controller {
     }
 
     public function excluir($id) {
-        dd($id);
+        $ex = $this->evm->find($id);
+        $delete = $ex->delete();
+
+        return redirect()->route('exercicios.inicial');
     }
 }
