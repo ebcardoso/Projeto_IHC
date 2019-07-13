@@ -54,6 +54,7 @@
 						<!-- Tab panes -->
 						<div class="tab-content">
 							<div class="tab-pane fade active in" id="segunda">
+								<h2> Calorias Queimadas: {{ $total_segunda }} cal</h2>
 								<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<tr>
@@ -81,6 +82,7 @@
 								</table>          
 							</div>
 							<div class="tab-pane fade" id="terca">
+								<h2> Calorias Queimadas: {{ $total_terca }} cal</h2>
 								<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<tr>
@@ -108,6 +110,7 @@
 								</table>
 							</div>
 							<div class="tab-pane fade" id="quarta">
+								<h2> Calorias Queimadas: {{ $total_quarta }} cal</h2>
 								<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<tr>
@@ -135,6 +138,7 @@
 								</table>
 							</div>
 							<div class="tab-pane fade" id="quinta">
+								<h2> Calorias Queimadas: {{ $total_quinta }} cal</h2>
 								<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<tr>
@@ -162,6 +166,7 @@
 								</table>
 							</div>
 							<div class="tab-pane fade" id="sexta">
+								<h2> Calorias Queimadas: {{ $total_sexta }} cal</h2>
 								<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<tr>
@@ -189,6 +194,7 @@
 								</table>
 							</div>
 							<div class="tab-pane fade" id="sabado">
+								<h2> Calorias Queimadas: {{ $total_sabado }} cal</h2>
 								<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<tr>
@@ -216,6 +222,7 @@
 								</table>
 							</div>
 							<div class="tab-pane fade" id="domingo">
+								<h2> Calorias Queimadas: {{ $total_domingo }} cal</h2>
 								<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
 										<tr>
