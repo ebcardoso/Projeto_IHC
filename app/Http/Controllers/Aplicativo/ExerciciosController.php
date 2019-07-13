@@ -117,7 +117,15 @@ class ExerciciosController extends Controller {
             $total_domingo = $total_domingo + $c->calorias;
         }
 
-        return view("app04_exercicios.inicial", compact("titulo", "titulo_secao",
+        $exercicios = $this->em
+                            ->select('exercicio.id',
+                                     'exercicio.nome as nome',
+                                     'exercicio.calorias as calorias'
+                                    )
+                            ->orderBy('exercicio.nome')
+                            ->get();
+
+        return view("app04_exercicios.inicial", compact("titulo", "titulo_secao", "exercicios",
                                                         "segunda", "terca", "quarta",
                                                         "quinta", "sexta", "sabado", "domingo",
                                                         "total_segunda", "total_terca", "total_quarta",
@@ -128,6 +136,19 @@ class ExerciciosController extends Controller {
     public function excluir($id) {
         $ex = $this->evm->find($id);
         $delete = $ex->delete();
+
+        return redirect()->route('exercicios.inicial');
+    }
+
+    public function newexer(Request $request) {
+        $dataForm = $request->except(['_token']);
+        
+        $e = new ExerciciosVinculoModel;
+            $e->id_user = Auth::user()->id;
+            $e->id_exercicio = $dataForm['id_exercicio'];
+            $e->dia = $dataForm['dia'];
+            $e->ativo = 1;
+        $e->save();
 
         return redirect()->route('exercicios.inicial');
     }

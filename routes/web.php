@@ -42,3 +42,4 @@ Route::get('/meta/{id}/encerrar',  'Aplicativo\MetaController@encerrar')->name('
 //exercicios
 Route::get('/exercicios',              'Aplicativo\ExerciciosController@inicial')->name('exercicios.inicial');
 Route::get('/exercicios/excluir/{id}', 'Aplicativo\ExerciciosController@excluir')->name('exercicios.excluir');
+Route::post('/exercicios/newexer',     'Aplicativo\ExerciciosController@newexer')->name('exercicios.newexer');

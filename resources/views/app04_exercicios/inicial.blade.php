@@ -25,7 +25,7 @@
 						Basic Tabs
 					</div-->
 					<!-- /.panel-heading -->
-					<div class="panel-body">
+					<div class="panel-body">			
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs">
 							<li class="active">
@@ -80,6 +80,43 @@
 										@endforeach
 									</tbody>
 								</table>          
+
+								<p align='right'>
+									<button class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target="#segunda_modal">
+										<i class="fa fa-plus"></i>
+									</button>
+								</p>
+
+								<div class="modal fade" id="segunda_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+												<h4 class="modal-title" id="myModalLabel">Escolha o Exercício</h4>
+											</div>
+											
+											<div class="modal-body">
+												<form method="post" action="{{route('exercicios.newexer')}}">
+													<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+													<input type="hidden" name="dia" value="{{1}}"/>
+													<div class="form-group">
+														<label>Exercício:*</label>
+														<select name="id_exercicio" class="form-control">
+															@foreach($exercicios as $e)
+																<option value="{{$e->id}}">
+																	{{$e->nome}} - {{$e->calorias}} Calorias
+																</option>
+															@endforeach
+														</select>
+													</div>
+													<button type="submit" class="btn btn-block btn-success">Finalizar</button>
+												</form>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
 							</div>
 							<div class="tab-pane fade" id="terca">
 								<h2> Calorias Queimadas: {{ $total_terca }} cal</h2>
@@ -108,6 +145,43 @@
 										@endforeach
 									</tbody>
 								</table>
+
+								<p align='right'>
+									<button class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target="#terca_modal">
+										<i class="fa fa-plus"></i>
+									</button>
+								</p>
+
+								<div class="modal fade" id="terca_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+												<h4 class="modal-title" id="myModalLabel">Escolha o Exercício</h4>
+											</div>
+											
+											<div class="modal-body">
+												<form method="post" action="{{route('exercicios.newexer')}}">
+													<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+													<input type="hidden" name="dia" value="{{2}}"/>
+													<div class="form-group">
+														<label>Exercício:*</label>
+														<select name="id_exercicio" class="form-control">
+															@foreach($exercicios as $e)
+																<option value="{{$e->id}}">
+																	{{$e->nome}} - {{$e->calorias}} Calorias
+																</option>
+															@endforeach
+														</select>
+													</div>
+													<button type="submit" class="btn btn-block btn-success">Finalizar</button>
+												</form>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
 							</div>
 							<div class="tab-pane fade" id="quarta">
 								<h2> Calorias Queimadas: {{ $total_quarta }} cal</h2>
@@ -136,6 +210,43 @@
 										@endforeach
 									</tbody>
 								</table>
+
+								<p align='right'>
+									<button class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target="#quarta_modal">
+										<i class="fa fa-plus"></i>
+									</button>
+								</p>
+
+								<div class="modal fade" id="quarta_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+												<h4 class="modal-title" id="myModalLabel">Escolha o Exercício</h4>
+											</div>
+											
+											<div class="modal-body">
+												<form method="post" action="{{route('exercicios.newexer')}}">
+													<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+													<input type="hidden" name="dia" value="{{3}}"/>
+													<div class="form-group">
+														<label>Exercício:*</label>
+														<select name="id_exercicio" class="form-control">
+															@foreach($exercicios as $e)
+																<option value="{{$e->id}}">
+																	{{$e->nome}} - {{$e->calorias}} Calorias
+																</option>
+															@endforeach
+														</select>
+													</div>
+													<button type="submit" class="btn btn-block btn-success">Finalizar</button>
+												</form>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
 							</div>
 							<div class="tab-pane fade" id="quinta">
 								<h2> Calorias Queimadas: {{ $total_quinta }} cal</h2>
@@ -164,6 +275,42 @@
 										@endforeach
 									</tbody>
 								</table>
+								<p align='right'>
+									<button class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target="#quinta_modal">
+										<i class="fa fa-plus"></i>
+									</button>
+								</p>
+
+								<div class="modal fade" id="quinta_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+												<h4 class="modal-title" id="myModalLabel">Escolha o Exercício</h4>
+											</div>
+											
+											<div class="modal-body">
+												<form method="post" action="{{route('exercicios.newexer')}}">
+													<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+													<input type="hidden" name="dia" value="{{4}}"/>
+													<div class="form-group">
+														<label>Exercício:*</label>
+														<select name="id_exercicio" class="form-control">
+															@foreach($exercicios as $e)
+																<option value="{{$e->id}}">
+																	{{$e->nome}} - {{$e->calorias}} Calorias
+																</option>
+															@endforeach
+														</select>
+													</div>
+													<button type="submit" class="btn btn-block btn-success">Finalizar</button>
+												</form>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
 							</div>
 							<div class="tab-pane fade" id="sexta">
 								<h2> Calorias Queimadas: {{ $total_sexta }} cal</h2>
@@ -192,6 +339,42 @@
 										@endforeach
 									</tbody>
 								</table>
+								<p align='right'>
+									<button class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target="#sexta_modal">
+										<i class="fa fa-plus"></i>
+									</button>
+								</p>
+
+								<div class="modal fade" id="sexta_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+												<h4 class="modal-title" id="myModalLabel">Escolha o Exercício</h4>
+											</div>
+											
+											<div class="modal-body">
+												<form method="post" action="{{route('exercicios.newexer')}}">
+													<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+													<input type="hidden" name="dia" value="{{5}}"/>
+													<div class="form-group">
+														<label>Exercício:*</label>
+														<select name="id_exercicio" class="form-control">
+															@foreach($exercicios as $e)
+																<option value="{{$e->id}}">
+																	{{$e->nome}} - {{$e->calorias}} Calorias
+																</option>
+															@endforeach
+														</select>
+													</div>
+													<button type="submit" class="btn btn-block btn-success">Finalizar</button>
+												</form>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
 							</div>
 							<div class="tab-pane fade" id="sabado">
 								<h2> Calorias Queimadas: {{ $total_sabado }} cal</h2>
@@ -220,6 +403,43 @@
 										@endforeach
 									</tbody>
 								</table>
+
+								<p align='right'>
+									<button class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target="#sabado_modal">
+										<i class="fa fa-plus"></i>
+									</button>
+								</p>
+
+								<div class="modal fade" id="sabado_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+												<h4 class="modal-title" id="myModalLabel">Escolha o Exercício</h4>
+											</div>
+											
+											<div class="modal-body">
+												<form method="post" action="{{route('exercicios.newexer')}}">
+													<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+													<input type="hidden" name="dia" value="{{6}}"/>
+													<div class="form-group">
+														<label>Exercício:*</label>
+														<select name="id_exercicio" class="form-control">
+															@foreach($exercicios as $e)
+																<option value="{{$e->id}}">
+																	{{$e->nome}} - {{$e->calorias}} Calorias
+																</option>
+															@endforeach
+														</select>
+													</div>
+													<button type="submit" class="btn btn-block btn-success">Finalizar</button>
+												</form>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
 							</div>
 							<div class="tab-pane fade" id="domingo">
 								<h2> Calorias Queimadas: {{ $total_domingo }} cal</h2>
@@ -248,6 +468,44 @@
 										@endforeach
 									</tbody>
 								</table>
+
+								<p align='right'>
+									<button class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target="#domingo_modal">
+										<i class="fa fa-plus"></i>
+									</button>
+								</p>
+
+								<div class="modal fade" id="domingo_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+												<h4 class="modal-title" id="myModalLabel">Escolha o Exercício</h4>
+											</div>
+											
+											<div class="modal-body">
+												<form method="post" action="{{route('exercicios.newexer')}}">
+													<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+													<input type="hidden" name="dia" value="{{7}}"/>
+													<div class="form-group">
+														<label>Exercício:*</label>
+														<select name="id_exercicio" class="form-control">
+															@foreach($exercicios as $e)
+																<option value="{{$e->id}}">
+																	{{$e->nome}} - {{$e->calorias}} Calorias
+																</option>
+															@endforeach
+														</select>
+													</div>
+													<button type="submit" class="btn btn-block btn-success">Finalizar</button>
+												</form>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								
 							</div>
 						</div>
 					</div>
