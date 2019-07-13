@@ -57,6 +57,9 @@
                         <li>
                             <a href="{{route('meta.inicial')}}"><i class="fa fa-tag fa-fw"></i>Metas</a>
                         </li>
+                        <li>
+                            <a href="{{route('exercicios.inicial')}}"><i class="fa fa-tag fa-fw"></i>Exercícios</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
