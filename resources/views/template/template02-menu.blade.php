@@ -23,6 +23,9 @@
                             <a href="{{route('home')}}"><i class="fa fa-dashboard fa-fw"></i>Inicio</a>
                         </li>
                         <li>
+                            <a href="{{route('diario.inicial')}}"><i class="fa fa-calendar-o fa-fw"></i>Meu Diário</a>
+                        </li>
+                        <li>
                             <a href="{{route('grupo.index')}}"><i class="fa fa-group fa-fw"></i>Minha Família</a>
                         </li>
                         <li>

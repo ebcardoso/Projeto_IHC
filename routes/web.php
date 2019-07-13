@@ -43,3 +43,6 @@ Route::get('/meta/{id}/encerrar',  'Aplicativo\MetaController@encerrar')->name('
 Route::get('/exercicios',              'Aplicativo\ExerciciosController@inicial')->name('exercicios.inicial');
 Route::get('/exercicios/excluir/{id}', 'Aplicativo\ExerciciosController@excluir')->name('exercicios.excluir');
 Route::post('/exercicios/newexer',     'Aplicativo\ExerciciosController@newexer')->name('exercicios.newexer');
+
+//meu diário
+Route::get('/diario', 'Aplicativo\DiarioController@inicial')->name('diario.inicial');
