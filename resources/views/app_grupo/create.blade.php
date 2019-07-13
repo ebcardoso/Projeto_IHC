@@ -30,7 +30,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>Nome da Família:*</label>
-                                        <input type="text" name="nome" class="form-control" placeholder="Insira o Nome" value="{{$departamento->nome or old('nome')}}">
+                                        <input type="text" name="nome" class="form-control" placeholder="Insira o Nome">
                                     </div>
                                     <button type="submit" class="btn btn-success">Finalizar</button>
                                 </div> <!-- col-lg-7 -->

@@ -26,3 +26,58 @@ DB_USERNAME=postgres
 DB_PASSWORD=maranguape123
 
 https://stackoverflow.com/questions/23786359/laravel-migration-unique-key-is-too-long-even-if-specified
+
+<td> {{$m->recompensa}} Recompensa </td>
+                                    <td>
+                                        @if($m->status == 0)
+                                            Em Andamento
+                                        @endif
+                                        @if($m->status == 1)
+                                            Em Avaliação
+                                        @endif
+                                        @if($m->status == 2)
+                                            Aprovada
+                                        @endif
+                                        @if($m->status == 3)
+                                            Recusado
+                                        @endif
+                                    </td>
+
+<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Status</th>
+                                    <th>Exibir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($metas as $m)
+                                <tr class="odd gradeX"> 
+                                    <td> {{$m->descricao}} </td> 
+                                    <td>
+                                        @if($m->status == 0)
+                                            Em Andamento
+                                        @endif
+                                        @if($m->status == 1)
+                                            Em Avaliação
+                                        @endif
+                                        @if($m->status == 2)
+                                            Aprovada
+                                        @endif
+                                        @if($m->status == 3)
+                                            Recusado
+                                        @endif
+                                    </td> 
+                                    <td>
+                                        <center>
+                                            <a href="{{ route('meta.exibir', $m->id) }}"
+                                               class="btn btn-primary btn-circle btn-lg">
+                                                <i class="fa fa-angle-double-right  "></i>
+                                            </a>
+                                        </center>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>  s

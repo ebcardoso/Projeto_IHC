@@ -54,6 +54,9 @@
                         <li>
                             <a href="{{route('dieta.inicial')}}"><i class="fa fa-tag fa-fw"></i>Minha Dieta</a>
                         </li>
+                        <li>
+                            <a href="{{route('meta.inicial')}}"><i class="fa fa-tag fa-fw"></i>Metas</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

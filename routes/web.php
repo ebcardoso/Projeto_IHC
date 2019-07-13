@@ -31,3 +31,10 @@ Route::get('/dieta/janta',  'Aplicativo\DietaController@janta')->name('dieta.jan
 Route::get('/dieta/cafe_excluir/{id}',   'Aplicativo\DietaController@cafe_excluir')->name('dieta.cafe_excluir');
 Route::get('/dieta/almoco_excluir/{id}', 'Aplicativo\DietaController@almoco_excluir')->name('dieta.almoco_excluir');
 Route::get('/dieta/janta_excluir/{id}',  'Aplicativo\DietaController@janta_excluir')->name('dieta.janta_excluir');
+
+//metas
+Route::get('/meta',       'Aplicativo\MetaController@inicial')->name('meta.inicial');
+Route::get('/meta/criar', 'Aplicativo\MetaController@criar')->name('meta.criar');
+Route::post('/meta/criar/inserir_bd', 'Aplicativo\MetaController@inserir_bd')->name('meta.inserir_bd');
+Route::get('/meta/{id}',  'Aplicativo\MetaController@meta')->name('meta.exibir');
+Route::get('/meta/{id}/encerrar',  'Aplicativo\MetaController@encerrar')->name('meta.encerrar');
