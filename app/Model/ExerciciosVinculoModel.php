@@ -4,6 +4,6 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ExercicioVinculoModel extends Model{
+class ExerciciosVinculoModel extends Model{
     protected $table = 'exerciciovinculo';
 }

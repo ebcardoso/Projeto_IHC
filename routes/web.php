@@ -40,4 +40,5 @@ Route::get('/meta/{id}',  'Aplicativo\MetaController@meta')->name('meta.exibir')
 Route::get('/meta/{id}/encerrar',  'Aplicativo\MetaController@encerrar')->name('meta.encerrar');
 
 //exercicios
-Route::get('/exercicios', 'Aplicativo\ExerciciosController@inicial')->name('exercicios.inicial');
+Route::get('/exercicios',              'Aplicativo\ExerciciosController@inicial')->name('exercicios.inicial');
+Route::get('/exercicios/excluir/{id}', 'Aplicativo\ExerciciosController@excluir')->name('exercicios.excluir');
