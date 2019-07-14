@@ -56,13 +56,11 @@ class GrupoController extends Controller {
             $nome_familia = $familia[0]->nome;
 
             $membros =  $this->users
-                                ->select('users.id as id' , 'users.name as name', 'users.idade as idade')
-                                ->whereIn('users.id',
-                                          $this->grupovinculo->
-                                                    select('id_user')
-                                                    ->get()
-                                )
-                                ->get();
+                                ->select('users.id as id',
+                                         'users.name as name',
+                                         'users.idade as idade',
+                                         'users.responsavel as responsavel')
+                                ->whereIn('users.id', $this->grupovinculo->select('id_user')->get())->get();
 
             $status_aux =  $this->grupovinculo
                                     ->select('grupovinculo.status as status')

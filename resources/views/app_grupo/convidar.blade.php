@@ -34,7 +34,7 @@
                                         <label>E-Mail:*</label>
                                         <input type="text" name="email" class="form-control" placeholder="Insira o E-Mail">
                                     </div>
-                                    <button type="submit" class="btn btn-success">Enviar Convite</button>
+                                        <button type="submit" class="btn btn-primary btn-block">Enviar Convite</button>
                                 </div> <!-- col-lg-7 -->
                             </div>  
                         </form>

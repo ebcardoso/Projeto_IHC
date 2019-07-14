@@ -29,17 +29,35 @@
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>Descrição</th>
-                                    <th>Autor</th>
-                                    <th>Ações</th>
+                                    <th><center>Descrição</center></th>
+                                    <th><center>Autor</center></th>
+                                    <th><center>Ações</center></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($notifs as $m)
                                     <tr class="odd gradeX"> 
                                         <td> {{$m->descri}} </td>
-                                        <td> {{$m->autor}} </td>
-                                        <td> -  </td>
+                                        <td> <center>{{$m->autor}}</center> </td>
+                                        <td>
+                                            <center>
+                                                @if ($m->tipo == 1)
+                                                    <!-- Tipo 1 são as que pedem Acetar ou Recusar Grupo  -->
+                                                    <a href="{{route('notificacao.aceitar', $m->id)}}" class="btn btn-success btn-circle">
+                                                        <i class="fa fa-check"></i>
+                                                    </a>
+                                                    <a href="{{route('notificacao.recusar', $m->id)}}" class="btn btn-danger btn-circle">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                @elseif($m->tipo == 5)
+                                                    <!-- Tipo 5: Família Aceita -->
+                                                    Aceito
+                                                @elseif($m->tipo == 6)
+                                                    <!-- Tipo 5: Família Recusada -->
+                                                    Recusado
+                                                @endif
+                                            </center>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

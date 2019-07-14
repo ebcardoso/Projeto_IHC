@@ -12,8 +12,8 @@ class Notificacao extends Migration {
             $table->integer('id_origem')->nullable();
             $table->integer('id_destino')->nullable();
             $table->integer('id_grupo')->nullable();
-            $table->integer('ativo')->nullable();
-            $table->integer('tipo')->nullable();
+            $table->integer('ativo')->nullable(); //0 ou 1
+            $table->integer('tipo')->nullable(); //5- Aceitado | 6- Recusados
             $table->timestamps();
         });
     }
