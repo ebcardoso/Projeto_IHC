@@ -46,7 +46,7 @@
                                         <td><center>{{$m->idade}}</center></td>
                                         <td>
                                             @if ($m->responsavel >= 1)
-
+                                                {{ route('grupo.getresponsavel', $m->responsavel) }}
                                             @else
                                                 @if ($status_membro == 1)
                                                     <center>
@@ -70,11 +70,13 @@
 
                                                                         <div class="form-group">
                                                                             <label>Membro Responsável:*</label>
-                                                                            <select name="id_alimento" class="form-control">
+                                                                            <select name="id_responsavel" class="form-control">
                                                                                 @foreach($membros as $resp)
-                                                                                    <option value="{{$resp->id}}">
-                                                                                        {{$resp->name}}
-                                                                                    </option>
+                                                                                    @if($resp->id != $m->id)
+                                                                                        <option value="{{$resp->id}}">
+                                                                                            {{$resp->name}}
+                                                                                        </option>
+                                                                                    @endif
                                                                                 @endforeach
                                                                             </select>
                                                                         </div>

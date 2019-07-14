@@ -25,6 +25,14 @@ class GrupoController extends Controller {
         $this->users = $users;
     }
 
+    public function getresponsavel($id) {
+        $usr = User::find($id);
+        $id_resp = $usr->id_responsavel;
+
+        $usr2 = User::find($id_resp);
+        return $usr2->name;
+    }
+
     function show($id) {
 
     }
@@ -55,12 +63,19 @@ class GrupoController extends Controller {
                                 ->get();
             $nome_familia = $familia[0]->nome;
 
-            $membros =  $this->users
+            $membros = $this->users
                                 ->select('users.id as id',
                                          'users.name as name',
                                          'users.idade as idade',
-                                         'users.responsavel as responsavel')
-                                ->whereIn('users.id', $this->grupovinculo->select('id_user')->get())->get();
+                                         'users.responsavel as responsavel'
+                                )
+                                ->whereIn('users.id',
+                                          $this->grupovinculo
+                                                 ->select('id_user')
+                                                 ->get()
+                                )
+                                ->orderBy('users.name')
+                                ->get();
 
             $status_aux =  $this->grupovinculo
                                     ->select('grupovinculo.status as status')

@@ -13,6 +13,7 @@ Auth::routes();
 Route::get('/grupo',              'Aplicativo\GrupoController@index')->name('grupo.index');
 Route::get('/grupo/convidar',     'Aplicativo\GrupoController@convidar')->name('grupo.convidar');
 Route::post('/grupo/convitesave', 'Aplicativo\GrupoController@convitesave')->name('grupo.convitesave');
+Route::post('/grupo/getresponsavel/{id}', 'Aplicativo\GrupoController@getresponsavel')->name('grupo.getresponsavel');
 Route::resource('grupo',          'Aplicativo\GrupoController');
 
 //notificações

@@ -28,6 +28,7 @@ class NotController extends Controller {
                             ->join('users', 'notificacao.id_origem', '=', 'users.id')
                             ->where('notificacao.id_destino', Auth::user()->id)
                             ->where('notificacao.ativo', 1)
+                            ->orderby('notificacao.id', 'DESC')
                  ->get();
 
         return view('app_notif.index', compact('notifs', 'titulo_secao', 'titulo'));
