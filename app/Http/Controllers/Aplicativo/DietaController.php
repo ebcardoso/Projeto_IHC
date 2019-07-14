@@ -141,21 +141,23 @@ class DietaController extends Controller {
             $cal_cafe = $cal_cafe + $c->calorias;
         }
 
-        return view('app02_dieta.dieta_cafe', compact('titulo', 'titulo_secao', 'cal_cafe', 'calorias_cafe', 'ca1'));
+        $alimentos = $this->alt->select('*')->where('tipo', '=', 1)->orderBy('nome')->get();
+
+        return view('app02_dieta.dieta_cafe', compact('alimentos', 'titulo', 'titulo_secao', 'cal_cafe', 'calorias_cafe', 'ca1'));
     }
 
     public function almoco() {
         $titulo = 'Dieta da Família';
         $titulo_secao = 'Dieta do Almoço';
 
-        //pegar informações sobre a dieta no café
+        //pegar informações sobre a dieta no almoço
         $usr_dieta = $this->users
                             ->select('users.calorias_almoco as calorias_almoco')
                             ->where('users.id', Auth::user()->id)
                             ->get();
         $calorias_almoco = $usr_dieta[0]->calorias_almoco;
 
-        //pegar alimentos consumidos no café
+        //pegar alimentos consumidos no almoço
         $ca2 = $this->udm
                         ->select('alimento.nome as nome',
                                  'alimento.calorias as calorias',
@@ -168,27 +170,29 @@ class DietaController extends Controller {
                         ->orderBy('alimento.nome')
                         ->get();
         
-        //número de calorias consumidas no café
+        //número de calorias consumidas no almoço
         $cal_almoco = 0;
         foreach($ca2 as $c) {
             $cal_almoco = $cal_almoco + $c->calorias;
         }
 
-        return view('app02_dieta.dieta_almoco', compact('titulo', 'titulo_secao', 'cal_almoco', 'calorias_almoco', 'ca2'));
+        $alimentos = $this->alt->select('*')->where('tipo', '=', 2)->orderBy('nome')->get();
+
+        return view('app02_dieta.dieta_almoco', compact('alimentos', 'titulo', 'titulo_secao', 'cal_almoco', 'calorias_almoco', 'ca2'));
     }
 
     public function janta() {
         $titulo = 'Dieta da Família';
         $titulo_secao = 'Dieta da Janta';
 
-        //pegar informações sobre a dieta no café
+        //pegar informações sobre a dieta na janta
         $usr_dieta = $this->users
                             ->select('users.calorias_janta as calorias_janta')
                             ->where('users.id', Auth::user()->id)
                             ->get();
         $calorias_janta = $usr_dieta[0]->calorias_janta;
 
-        //pegar alimentos consumidos no café
+        //pegar alimentos consumidos na janta
         $ca3 = $this->udm
                         ->select('alimento.nome as nome',
                                  'alimento.calorias as calorias',
@@ -201,13 +205,15 @@ class DietaController extends Controller {
                         ->orderBy('alimento.nome')
                         ->get();
         
-        //número de calorias consumidas no café
+        //número de calorias consumidas na janta
         $cal_janta = 0;
         foreach($ca3 as $c) {
             $cal_janta = $cal_janta + $c->calorias;
         }
 
-        return view('app02_dieta.dieta_janta', compact('titulo', 'titulo_secao', 'cal_janta', 'calorias_janta', 'ca3'));
+        $alimentos = $this->alt->select('*')->where('tipo', '=', 3)->orderBy('nome')->get();
+
+        return view('app02_dieta.dieta_janta', compact('alimentos', 'titulo', 'titulo_secao', 'cal_janta', 'calorias_janta', 'ca3'));
     }
 
     public function cafe_excluir($id) {
@@ -229,5 +235,25 @@ class DietaController extends Controller {
         $delete = $dt->delete();
 
         return redirect()->route('dieta.janta');
+    }
+
+    public function inserirnadieta(Request $request) {
+        $dataForm = $request->except(['_token']);
+
+        $e = new UsuarioDietaModel;
+            $e->id_user     = Auth::user()->id;
+            $e->id_alimento = $dataForm['id_alimento'];
+            $e->ativo = 1;
+        $e->save();
+
+        $dia = $dataForm['dia'];
+        
+        if ($dia == 1) {
+            return redirect()->route('dieta.cafe');
+        } else if ($dia == 2) {
+            return redirect()->route('dieta.almoco');
+        } else if ($dia == 3) {
+            return redirect()->route('dieta.janta');
+        }
     }
 }

@@ -31,6 +31,7 @@ Route::get('/dieta/janta',  'Aplicativo\DietaController@janta')->name('dieta.jan
 Route::get('/dieta/cafe_excluir/{id}',   'Aplicativo\DietaController@cafe_excluir')->name('dieta.cafe_excluir');
 Route::get('/dieta/almoco_excluir/{id}', 'Aplicativo\DietaController@almoco_excluir')->name('dieta.almoco_excluir');
 Route::get('/dieta/janta_excluir/{id}',  'Aplicativo\DietaController@janta_excluir')->name('dieta.janta_excluir');
+Route::post('/dieta/inserirnadieta',     'Aplicativo\DietaController@inserirnadieta')->name('dieta.inserirnadieta');
 
 //metas
 Route::get('/meta',       'Aplicativo\MetaController@inicial')->name('meta.inicial');
