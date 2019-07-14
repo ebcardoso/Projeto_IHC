@@ -14,12 +14,18 @@ class ResponsavelController extends Controller {
         $id_user = $dataForm['id_user'];
         $id_responsavel = $dataForm['id_responsavel'];
 
+        $usr_responsavel = User::find($id_responsavel);
+            $nome_resp = $usr_responsavel->name;
+        $update = $usr_responsavel->save();
+
         $usr = User::find($id_user);
+            $nomme = $usr->name;
             $usr->responsavel = $id_responsavel;
+            $usr->nome_responsavel2 = $nome_resp;
         $update = $usr->save();
 
         $notif_1 = new NotificacaoModel;
-            $notif_1->descri = 'Um membro da sua família está responsável por você!';
+            $notif_1->descri = $nome_resp.' está responsável por você!';
             $notif_1->tipo   = 7;
             $notif_1->ativo  = 1;
             $notif_1->id_origem = Auth::user()->id;
@@ -27,7 +33,7 @@ class ResponsavelController extends Controller {
         $notif_1->save();
 
         $notif_2 = new NotificacaoModel;
-            $notif_2->descri = 'Você está responsável por um membro da sua família!';
+            $notif_2->descri = 'Você está responsável por '. $nomme;
             $notif_2->tipo   = 7;
             $notif_2->ativo  = 1;
             $notif_2->id_origem = Auth::user()->id;

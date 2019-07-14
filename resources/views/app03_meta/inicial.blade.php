@@ -41,27 +41,23 @@
                                         <p> <b> Status:     </b>
                                             @if($m->status == 0)
                                                 Em Andamento
-                                            @endif
-                                            @if($m->status == 1)
-                                                Em Avaliação
-                                            @endif
-                                            @if($m->status == 2)
-                                                Aprovada
-                                            @endif
-                                            @if($m->status == 3)
-                                                Recusado
+                                            @elseif($m->status == 1)
+                                                @if (($m->votos_nao < ($n_familia/2)) && ($m->votos_sim < ($n_familia/2)))
+                                                    Em Avaliação
+                                                @else
+                                                    @if($m->votos_nao > ($n_familia/2))
+                                                        Recusado
+                                                    @else
+                                                        Aprovado
+                                                    @endif
+                                                @endif
                                             @endif
                                         </p>
                                         <p>
                                             <b> Progresso: </b> {{$m->a_perder/4}} @if($m->tipo == 1) Kg Perdidos @else Cal Perdidas @endif 
                                             <div class="progress progress-striped active">
                                                 <div 
-                                                    @if($m->status == 0)
-                                                        class="progress-bar progress-bar-info"
-                                                    @elseif($m->status == 1 || $m->status == 2 || $m->status == 3)
-                                                        class="progress-bar progress-bar-danger"
-                                                    @endif                                                    
-                                                    
+                                                    class="progress-bar progress-bar-primary"
                                                     role="progressbar"
                                                     aria-valuenow="40"
                                                     aria-valuemin="0"
@@ -73,8 +69,13 @@
                                         <p>
                                             <b> Tempo Restante: </b> 
                                             @if($m->status == 1)
-                                                Em Avaliação
-                                            @elseif($m->status == 2 || $m->status == 3)
+                                                @if (($m->votos_nao < ($n_familia/2)) && ($m->votos_sim < ($n_familia/2)))
+                                                    Em Avaliação
+                                                @else
+                                                    @if($m->votos_nao > ($n_familia/2))
+                                                        Recusado
+                                                    @endif
+                                                @endif
                                             @else
                                                 {{$m->dias - 3}} Dias Restantes
                                             @endif
@@ -84,14 +85,18 @@
                                                         style="width: {{100*($m->dias - 3)/$m->dias}}%"
                                                         class="progress-bar progress-bar-info"
                                                     @elseif($m->status == 1)
-                                                        style="width: {{100}}%"
-                                                        class="progress-bar progress-bar-warning"
-                                                    @elseif($m->status == 2)
-                                                        style="width: {{100}}%"
-                                                        class="progress-bar progress-bar-danger"
-                                                    @elseif($m->status == 3)
-                                                        style="width: {{100}}%"
-                                                        class="progress-bar progress-bar-success"
+                                                        @if (($m->votos_nao < ($n_familia/2)) && ($m->votos_sim < ($n_familia/2)))
+                                                            style="width: {{100}}%"
+                                                            class="progress-bar progress-bar-warning"
+                                                        @else
+                                                            @if($m->votos_nao > ($n_familia/2))
+                                                                style="width: {{100}}%"
+                                                                class="progress-bar progress-bar-danger"
+                                                            @else
+                                                                style="width: {{100}}%"
+                                                                class="progress-bar progress-bar-success"
+                                                            @endif
+                                                        @endif
                                                     @endif
                                                     
                                                     role="progressbar"
@@ -102,11 +107,16 @@
                                                 </div>
                                             </div>
                                         </p>
+                                        @if($m->status == 0)
                                         <p>
                                             <a href="{{route('meta.encerrar', $m->id)}}" class="btn btn-block btn-success">
                                                 Encerrar Meta
                                             </a>
                                         </p>
+                                        @elseif($m->status == 1)
+                                            <p><b>Votos Sim:</b> {{ $m->votos_sim }}</p>
+                                            <p><b>Votos Não:</b> {{ $m->votos_nao }}</<p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

@@ -42,6 +42,8 @@ Route::get('/meta/criar', 'Aplicativo\MetaController@criar')->name('meta.criar')
 Route::post('/meta/criar/inserir_bd', 'Aplicativo\MetaController@inserir_bd')->name('meta.inserir_bd');
 Route::get('/meta/{id}',  'Aplicativo\MetaController@meta')->name('meta.exibir');
 Route::get('/meta/{id}/encerrar',  'Aplicativo\MetaController@encerrar')->name('meta.encerrar');
+Route::get('/meta/votarsim/{id}', 'Aplicativo\MetaController@votarsim')->name('meta.votarsim');
+Route::get('/meta/votarnao/{id}', 'Aplicativo\MetaController@votarnao')->name('meta.votarnao');
 
 //exercicios
 Route::get('/exercicios',              'Aplicativo\ExerciciosController@inicial')->name('exercicios.inicial');

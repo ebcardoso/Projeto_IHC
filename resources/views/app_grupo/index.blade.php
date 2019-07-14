@@ -32,7 +32,7 @@
                                     <th><center>Nome</center></th>
                                     <th><center>Idade</center></th>
                                     @if ($status_membro == 1)
-                                    <th><center>Atribuir Responsável</center></th>
+                                    <th><center>Responsável</center></th>
                                     @endif
                                     @if ($status_membro == 0)
                                     <th><center>Responsável</center></th>
@@ -46,7 +46,7 @@
                                         <td><center>{{$m->idade}}</center></td>
                                         <td>
                                             @if ($m->responsavel >= 1)
-                                                {{ route('grupo.getresponsavel', $m->responsavel) }}
+                                                <center>{{ $m->nome_responsavel2 }}</center>
                                             @else
                                                 @if ($status_membro == 1)
                                                     <center>
@@ -60,7 +60,7 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                    <h4 class="modal-title" id="myModalLabel">Escolha o Responsável</h4>
+                                                                    <h4 class="modal-title" id="myModalLabel">Escolher</h4>
                                                                 </div>
                                                                 
                                                                 <div class="modal-body">

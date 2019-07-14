@@ -49,11 +49,19 @@
                                                     <a href="{{route('notificacao.recusar', $m->id)}}" class="btn btn-danger btn-circle">
                                                         <i class="fa fa-times"></i>
                                                     </a>
-                                                @elseif($m->tipo == 5)
-                                                    <!-- Tipo 5: Família Aceita -->
+                                                @elseif($m->tipo == 11)
+                                                    <!-- Tipo 1 são as que pedem Acetar ou Recusar Grupo  -->
+                                                    <a href="{{route('meta.votarsim', $m->id)}}" class="btn btn-success btn-circle">
+                                                        <i class="fa fa-check"></i>
+                                                    </a>
+                                                    <a href="{{route('meta.votarnao', $m->id)}}" class="btn btn-danger btn-circle">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                @elseif($m->tipo == 5 || $m->tipo == 12)
+                                                    <!-- Tipo 5: Família ou Meta Aceita -->
                                                     Aceito
-                                                @elseif($m->tipo == 6)
-                                                    <!-- Tipo 5: Família Recusada -->
+                                                @elseif($m->tipo == 6 || $m->tipo == 13)
+                                                    <!-- Tipo 5: Família ou Meta Recusada -->
                                                     Recusado
                                                 @endif
                                             </center>

@@ -67,7 +67,8 @@ class GrupoController extends Controller {
                                 ->select('users.id as id',
                                          'users.name as name',
                                          'users.idade as idade',
-                                         'users.responsavel as responsavel'
+                                         'users.responsavel as responsavel',
+                                         'users.nome_responsavel2 as nome_responsavel2'
                                 )
                                 ->whereIn('users.id',
                                           $this->grupovinculo
@@ -76,6 +77,13 @@ class GrupoController extends Controller {
                                 )
                                 ->orderBy('users.name')
                                 ->get();
+
+            foreach($membros as $mm) {
+                $mm->respp = "";
+                if ($mm->id_responsavel > 0) {
+                    $mm->respp = getresponsavel($id_responsavel);
+                }
+            }
 
             $status_aux =  $this->grupovinculo
                                     ->select('grupovinculo.status as status')
